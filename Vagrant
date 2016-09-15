@@ -1,0 +1,10 @@
+# Soon i will do some changes here
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "cmrabet/nodejs"
+  config.vm.network "forwarded_port", guest: 222, host: 22
+  config.vm.network "private_network", ip: "10.10.0.2"
+  config.vm.synced_folder "../node", "/vagrant_node"
+end
